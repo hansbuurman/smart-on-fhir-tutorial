@@ -12,14 +12,9 @@
         var patient = smart.patient;
         var pt = patient.read();
         var obv = smart.patient.api.fetchAll({
-                      type: 'Observation',
-                      query: {
-                        code: {
-                          $or: ['http://loinc.org|8302-2', 'http://loinc.org|8462-4',
-                                'http://loinc.org|8480-6', 'http://loinc.org|2085-9',
-                                'http://loinc.org|2089-1', 'http://loinc.org|55284-4']
-                              }
-                             }
+                      type: 'MedicationStatement',
+                      query: { status: 'active' }
+
                     });
 
         $.when(pt, obv).fail(onError);
@@ -58,14 +53,14 @@
             var d = ' <date> ';
             var c = ' <code> ';
             var vq = ' <valueQuantity> ';
-            if (o.hasOwnProperty('issued')) {
-              d = o.issued.toString();
+            if (o.hasOwnProperty('dateAsserted')) {
+              d = o.dateAsserted.toString();
             }
-            if (o.hasOwnProperty('code')) {
-              c = o.code.coding[0].code;
+            if (o.hasOwnProperty('medicationCodeableConcept')) {
+              c = o.medicationCodeableConcept.text;
             }
-            if (o.hasOwnProperty('valueQuantity')) {
-              vq = o.valueQuantity.value.toString();
+            if (o.hasOwnProperty('dosage')) {
+              vq = o.dosage.text;
             }
             
             p.hb = p.hb + '\n' + d + ' ' + c + ' ' + vq;
