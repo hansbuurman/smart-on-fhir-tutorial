@@ -65,7 +65,7 @@
               c = o.code.coding[0].code;
             }
             if (o.hasOwnProperty('valueQuantity')) {
-              vq = o.valueQuantity[0].toString();
+              vq = o.valueQuantity.value.toString();
             }
             
             p.hb = p.hb + '\n' + d + ' ' + c + ' ' + vq;
