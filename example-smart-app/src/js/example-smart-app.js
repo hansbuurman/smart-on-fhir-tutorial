@@ -54,6 +54,9 @@
           p.lname = lname;
           p.age = parseInt(calculateAge(dob));
           p.hb  = 'The number of observations is ' + obv.length.toString();
+          obv.forEach(function(o) {
+            p.hb = p.hb + '\n' + JSON.stringify(o);
+          });
 
           if(typeof height[0] != 'undefined' && typeof height[0].valueQuantity.value != 'undefined' && typeof height[0].valueQuantity.unit != 'undefined') {
             p.height = height[0].valueQuantity.value + ' ' + height[0].valueQuantity.unit;
