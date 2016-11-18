@@ -48,7 +48,7 @@
           p.fname = fname;
           p.lname = lname;
           p.age = parseInt(calculateAge(dob));
-          p.hb  = 'The number of observations is ' + obv.length.toString();
+          p.hb  = 'The number of MedicationStatements is ' + obv.length.toString();
           obv.forEach(function(o) {
             var d = ' <date> ';
             var c = ' <code> ';
@@ -63,7 +63,7 @@
               vq = o.dosage.text;
             }
             
-            p.hb = p.hb + '\n' + d + ' ' + c + ' ' + vq;
+            p.hb = p.hb + ' *** ' + d + ' ' + c + ' ' + vq;
           });
 
           if(typeof height[0] != 'undefined' && typeof height[0].valueQuantity.value != 'undefined' && typeof height[0].valueQuantity.unit != 'undefined') {
