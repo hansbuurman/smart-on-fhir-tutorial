@@ -52,7 +52,7 @@
           obv.forEach(function(o) {
             var d = ' <date> ';
             var c = ' <code> ';
-            var vq = ' <valueQuantity> ';
+            var vq = ' <dosage> ';
             if (o.hasOwnProperty('dateAsserted')) {
               d = o.dateAsserted.toString();
             }
@@ -60,7 +60,7 @@
               c = o.medicationCodeableConcept.text;
             }
             if (o.dosage.length > 0 && o.dosage[0].hasOwnProperty('text')) {
-              vq = o.dosage[0].text;
+              vq = o.dosage[0].toString();
             }
             
             p.hb = p.hb + ' *** ' + d + ' ' + c + ' ' + vq;
