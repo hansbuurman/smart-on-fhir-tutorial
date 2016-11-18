@@ -55,8 +55,12 @@
           p.age = parseInt(calculateAge(dob));
           p.hb  = 'The number of observations is ' + obv.length.toString();
           obv.forEach(function(o) {
+            var d = ' <date> ';
             var c = ' <code> ';
             var vq = ' <valueQuantity> ';
+            if (o.hasOwnProperty('code')) {
+              d = o.date.toString();
+            }
             if (o.hasOwnProperty('code')) {
               c = o.code.coding[0].code;
             }
@@ -64,7 +68,7 @@
               vq = o.valueQuantity.toString();
             }
             
-            p.hb = p.hb + '\n' + o.date.toString() + ' ' + c + ' ' + vq;
+            p.hb = p.hb + '\n' + d + ' ' + c + ' ' + vq;
           });
 
           if(typeof height[0] != 'undefined' && typeof height[0].valueQuantity.value != 'undefined' && typeof height[0].valueQuantity.unit != 'undefined') {
