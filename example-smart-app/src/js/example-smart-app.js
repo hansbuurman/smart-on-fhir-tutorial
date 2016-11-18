@@ -53,7 +53,7 @@
           p.fname = fname;
           p.lname = lname;
           p.age = parseInt(calculateAge(dob));
-          p.hb  = 'Extra data goes here';
+          p.hb  = 'The number of observations is ' + obv.length.toString();
 
           if(typeof height[0] != 'undefined' && typeof height[0].valueQuantity.value != 'undefined' && typeof height[0].valueQuantity.unit != 'undefined') {
             p.height = height[0].valueQuantity.value + ' ' + height[0].valueQuantity.unit;
