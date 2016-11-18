@@ -59,7 +59,7 @@
             var c = ' <code> ';
             var vq = ' <valueQuantity> ';
             if (o.hasOwnProperty('date')) {
-              d = o.date.toString();
+              //d = o.date.toString();
             }
             if (o.hasOwnProperty('code')) {
               c = o.code.coding[0].code;
