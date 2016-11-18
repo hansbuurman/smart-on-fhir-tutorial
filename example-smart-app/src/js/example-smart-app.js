@@ -53,6 +53,7 @@
           p.fname = fname;
           p.lname = lname;
           p.age = parseInt(calculateAge(dob));
+          p.hb  = 'Extra data goes here';
 
           if(typeof height[0] != 'undefined' && typeof height[0].valueQuantity.value != 'undefined' && typeof height[0].valueQuantity.unit != 'undefined') {
             p.height = height[0].valueQuantity.value + ' ' + height[0].valueQuantity.unit;
@@ -97,6 +98,7 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
+      hb: {value: ''},
     };
   }
 
@@ -157,6 +159,8 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
+    $('#hb').html(p.hb);
+    
   };
 
 })(window);
