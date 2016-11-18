@@ -58,14 +58,14 @@
             var d = ' <date> ';
             var c = ' <code> ';
             var vq = ' <valueQuantity> ';
-            if (o.hasOwnProperty('date')) {
-              //d = o.date.toString();
+            if (o.hasOwnProperty('issued')) {
+              d = o.issued.toString();
             }
             if (o.hasOwnProperty('code')) {
               c = o.code.coding[0].code;
             }
             if (o.hasOwnProperty('valueQuantity')) {
-              vq = o.valueQuantity.toString();
+              vq = o.valueQuantity[0].toString();
             }
             
             p.hb = p.hb + '\n' + d + ' ' + c + ' ' + vq;
