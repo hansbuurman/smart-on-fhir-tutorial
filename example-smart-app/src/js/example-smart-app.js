@@ -60,7 +60,7 @@
               c = o.medicationCodeableConcept.text;
             }
             if (o.hasOwnProperty('dosage')) {
-              vq = o.dosage.text;
+              vq = o.dosage[0].text;
             }
             
             p.hb = p.hb + ' *** ' + d + ' ' + c + ' ' + vq;
