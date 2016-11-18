@@ -60,7 +60,7 @@
               c = o.medicationCodeableConcept.text;
             }
             if (o.dosage.length > 0 && o.dosage[0].hasOwnProperty('text')) {
-              vq = o.dosage[0].toString();
+              vq = JSON.stringify(o.dosage[0]);
             }
             
             p.hb = p.hb + ' *** ' + d + ' ' + c + ' ' + vq;
