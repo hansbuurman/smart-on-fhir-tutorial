@@ -59,7 +59,7 @@
             if (o.hasOwnProperty('medicationCodeableConcept')) {
               c = o.medicationCodeableConcept.text;
             }
-            if (o.hasOwnProperty('dosage')) {
+            if (o.dosage.length > 0 && o.dosage[0].hasOwnProperty('dosage')) {
               vq = o.dosage[0].text;
             }
             
