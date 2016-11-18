@@ -58,7 +58,7 @@
             var d = ' <date> ';
             var c = ' <code> ';
             var vq = ' <valueQuantity> ';
-            if (o.hasOwnProperty('code')) {
+            if (o.hasOwnProperty('date')) {
               d = o.date.toString();
             }
             if (o.hasOwnProperty('code')) {
